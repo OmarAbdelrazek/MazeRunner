@@ -9,9 +9,17 @@ package model;
 
 public class Grenade5 implements Bomb{
 
+    public Grenade5() {
+    }
+
     @Override
     public void explode() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
     }
 
-}
+
+
+
