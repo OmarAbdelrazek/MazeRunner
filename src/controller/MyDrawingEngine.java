@@ -22,10 +22,9 @@ public int CellHeight = GameWindow.Height/VerticalCells;
 public int CellWidth = GameWindow.Width/HorizontalCells;
 public int[][] Grid = new int[VerticalCells][HorizontalCells];
 
-public void parse(int object,int i ,int j,Graphics g)
-        
+   public void parse(int object,int i ,int j,Graphics g)   
 {
-    //g.drawImage(image, i, i, io);
+    g.drawRect(0, 0, CellWidth, (CellHeight)*(-1));
 }
 
     @Override

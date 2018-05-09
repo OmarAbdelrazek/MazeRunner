@@ -7,6 +7,11 @@ package view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import javafx.scene.canvas.GraphicsContext;
+import sun.java2d.loops.DrawRect;
 
 /**
 
@@ -21,7 +26,8 @@ public class GameWindow extends javax.swing.JFrame {
     public static int Width;
     public GameWindow() {
         initComponents();
-        this.setSize(1440, 960);
+        this.setSize(960, 960);
+        this.setLocation(this.getWidth() / 2 , this.getHeight() / 2 - this.getSize().height / 2 + 35);
         this.setResizable(false);
         jPanel2.setSize(this.getWidth(), this.getHeight());
         jPanel2.setBackground(Color.LIGHT_GRAY);
@@ -108,6 +114,8 @@ public class GameWindow extends javax.swing.JFrame {
             }
             
         });
+        BufferedImage image = new BufferedImage(960/30,960/30 , 1);
+        Graphics2D g = (Graphics2D) image.getGraphics();
         
     }
 

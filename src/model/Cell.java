@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.awt.Image;
+
 /**
  *
  * @author Tommy
@@ -12,6 +14,15 @@ package model;
 public abstract class Cell {
     private int i;
     private int j;
+    private Image img;
+
+    public Image getImg() {
+        return img;
+    }
+
+    public void setImg(Image img) {
+        this.img = img;
+    }
     public abstract void draw();
 
     public int getI() {
