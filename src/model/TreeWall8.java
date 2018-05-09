@@ -11,6 +11,9 @@ import java.awt.Image;
 
 public class TreeWall8 extends Cell implements Wall{
 
+    public TreeWall8() {
+    }
+
 
     @Override
     public void draw() {

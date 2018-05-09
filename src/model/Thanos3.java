@@ -9,6 +9,9 @@ package model;
 
 public class Thanos3  implements Monster{
 
+    public Thanos3() {
+    }
+
     @Override
     public void health() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

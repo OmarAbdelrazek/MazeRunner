@@ -9,6 +9,9 @@ package model;
 
 public class TNT6 extends Cell implements Bomb{
 
+    public TNT6() {
+    }
+
     @Override
     public void explode () {
     }

@@ -17,15 +17,15 @@ public class GameWindow extends javax.swing.JFrame {
     /**
      Creates new form gui
      */
-    public Dimension Dimensions;
+    public static int Height;
+    public static int Width;
     public GameWindow() {
         initComponents();
         this.setSize(1440, 960);
         this.setResizable(false);
         jPanel2.setSize(this.getWidth(), this.getHeight());
         jPanel2.setBackground(Color.LIGHT_GRAY);
-        Dimensions.height = this.getHeight();
-        Dimensions.width = this.getWidth();
+        
     }
 
     /**
@@ -104,8 +104,11 @@ public class GameWindow extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GameWindow().setVisible(true);
+                
             }
+            
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

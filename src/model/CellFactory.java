@@ -12,7 +12,8 @@ package model;
 public class CellFactory {
 
     public Cell CreateCell(int type) {
-        if (type == 1) {
+        return null;
+   /*     if (type == 1) {
             return new Player1();
         } else if (type == 3) {
             return new Thanos3();
@@ -28,7 +29,7 @@ public class CellFactory {
             return new TreeWall8();
         }
         return null;
-
+*/
     }
 
 }
