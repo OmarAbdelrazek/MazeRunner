@@ -5,14 +5,20 @@
  */
 package controller;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
+import view.*;
 
 /**
  *
  * @author Tommy
  */
 public class MyDrawingEngine {
-public int[][] Grid = new int[30][30];
+public int HorizontalCells = 30;
+public int VerticalCells = 30;
+public Dimension CellDimensions = new Dimension(GameWindow.Dimensions.height/VerticalCells, GameWindow.Dimensions.width/HorizontalCells);
+public int[][] Grid = new int[VerticalCells][HorizontalCells];
+
 public void parse(int object,int i ,int j,Graphics g)
         
 {

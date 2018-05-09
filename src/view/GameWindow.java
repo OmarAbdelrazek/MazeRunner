@@ -6,6 +6,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Dimension;
 
 /**
 
@@ -16,12 +17,15 @@ public class GameWindow extends javax.swing.JFrame {
     /**
      Creates new form gui
      */
+    public Dimension Dimensions;
     public GameWindow() {
         initComponents();
         this.setSize(1440, 960);
         this.setResizable(false);
         jPanel2.setSize(this.getWidth(), this.getHeight());
         jPanel2.setBackground(Color.LIGHT_GRAY);
+        Dimensions.height = this.getHeight();
+        Dimensions.width = this.getWidth();
     }
 
     /**
