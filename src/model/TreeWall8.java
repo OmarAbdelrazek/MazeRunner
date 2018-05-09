@@ -9,7 +9,7 @@ package model;
 import java.awt.Image;
 
 
-public class TreeWall extends Wall{
+public class TreeWall8 extends Wall{
 
     @Override
     public void draw(int w, int h, int i, int j, Image img) {
