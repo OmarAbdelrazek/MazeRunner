@@ -7,10 +7,15 @@
 package model;
 
 
-public class TNT6 implements Bomb{
+public class TNT6 extends Cell implements Bomb{
 
     @Override
-    public void power() {
+    public void explode () {
+    }
+
+    @Override
+    public void draw() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

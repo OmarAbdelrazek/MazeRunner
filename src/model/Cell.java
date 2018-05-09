@@ -5,14 +5,13 @@
  */
 package model;
 
-import java.awt.Image;
-
 /**
-
- @author Omar's PC
+ *
+ * @author Tommy
  */
-public interface Cell {
-    
-    public void draw(int w , int h , int i , int j,Image img);
+public abstract class Cell {
+    private int i;
+    private int j;
+    public abstract void draw();
     
 }

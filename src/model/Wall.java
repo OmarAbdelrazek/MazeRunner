@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package model;
 
-
-public abstract class Wall implements Cell{
-    private int i;
-    private int j;
-    public void hit(){
-        
-    }
-   
+/**
+ *
+ * @author Tommy
+ */
+public interface Wall {
+    public void hit();
+    
+    
 }

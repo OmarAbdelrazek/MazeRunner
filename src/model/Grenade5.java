@@ -10,7 +10,7 @@ package model;
 public class Grenade5 implements Bomb{
 
     @Override
-    public void power() {
+    public void explode() {
 
     }
 
