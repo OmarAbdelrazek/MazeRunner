@@ -18,7 +18,8 @@ import view.*;
 public class MyDrawingEngine implements ActionListener{
 public int HorizontalCells = 30;
 public int VerticalCells = 30;
-public Dimension CellDimensions = new Dimension(GameWindow.Height/VerticalCells, GameWindow.Width/HorizontalCells);
+public int CellHeight = GameWindow.Height/VerticalCells;
+public int CellWidth = GameWindow.Width/HorizontalCells;
 public int[][] Grid = new int[VerticalCells][HorizontalCells];
 
 public void parse(int object,int i ,int j,Graphics g)
