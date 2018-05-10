@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.io.IOException;
+
 /**
  *
  * @author Tommy
@@ -12,7 +14,7 @@ package model;
 public class WallFactory {
 
 
-    public Wall createWall(int type) {
+    public Wall createWall(int type) throws IOException {
         if (type == 7) {
             return new StoneWall7();
         } else if (type == 8) {

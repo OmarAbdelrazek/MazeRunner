@@ -87,5 +87,9 @@ public class Player1 {
     {
         
     }
+    public void CheckCollision()
+    {
+        
+    }
 
 }

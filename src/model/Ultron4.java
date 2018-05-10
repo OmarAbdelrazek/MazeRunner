@@ -6,8 +6,10 @@
 
 package model;
 
+import java.awt.Graphics2D;
 
-public class Ultron4 implements Monster{
+
+public class Ultron4 extends Cell implements Monster{
 
     public Ultron4() {
     }
@@ -19,6 +21,11 @@ public class Ultron4 implements Monster{
 
     @Override
     public void power() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void draw(Graphics2D g,int i ,int j) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
