@@ -5,9 +5,6 @@
  */
 package model;
 
-import java.awt.Graphics2D;
-import java.awt.Image;
-
 /**
  *
  * @author Tommy
@@ -15,16 +12,7 @@ import java.awt.Image;
 public abstract class Cell {
     private int i;
     private int j;
-    private Image img;
-
-    public Image getImg() {
-        return img;
-    }
-
-    public void setImg(Image img) {
-        this.img = img;
-    }
-    public abstract void draw(Graphics2D g, int i, int j);
+    public abstract void draw();
 
     public int getI() {
         return i;

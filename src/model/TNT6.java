@@ -6,8 +6,6 @@
 
 package model;
 
-import java.awt.Graphics2D;
-
 
 public class TNT6 extends Cell implements Bomb{
 
@@ -19,7 +17,7 @@ public class TNT6 extends Cell implements Bomb{
     }
 
     @Override
-    public void draw(Graphics2D g,int i ,int js) {
+    public void draw() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

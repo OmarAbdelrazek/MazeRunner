@@ -7,11 +7,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import javafx.scene.canvas.GraphicsContext;
-import sun.java2d.loops.DrawRect;
+import java.awt.event.KeyEvent;
 
 /**
 
@@ -26,11 +22,10 @@ public class GameWindow extends javax.swing.JFrame {
     public static int Width;
     public GameWindow() {
         initComponents();
-        this.setSize(960, 960);
-        this.setLocation(this.getWidth() / 2 , this.getHeight() / 2 - this.getSize().height / 2 + 35);
+      //  this.setSize(1440, 960);
         this.setResizable(false);
-        jPanel2.setSize(this.getWidth(), this.getHeight());
-        jPanel2.setBackground(Color.LIGHT_GRAY);
+        gameplayPnl.setSize(this.getWidth(), this.getHeight());
+        gameplayPnl.setBackground(Color.LIGHT_GRAY);
         
     }
 
@@ -43,21 +38,62 @@ public class GameWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        gameplayPnl = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        xCoord = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        yCoord = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
 
-        jPanel2.setPreferredSize(new java.awt.Dimension(1440, 960));
+        gameplayPnl.setPreferredSize(new java.awt.Dimension(1400, 950));
+        gameplayPnl.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                gameplayPnlMouseMoved(evt);
+            }
+        });
+        gameplayPnl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                gameplayPnlMouseEntered(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1440, Short.MAX_VALUE)
+        jLabel1.setText("Y");
+
+        jLabel3.setText("X");
+
+        javax.swing.GroupLayout gameplayPnlLayout = new javax.swing.GroupLayout(gameplayPnl);
+        gameplayPnl.setLayout(gameplayPnlLayout);
+        gameplayPnlLayout.setHorizontalGroup(
+            gameplayPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(gameplayPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(gameplayPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(gameplayPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(xCoord, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(yCoord, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(1266, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 960, Short.MAX_VALUE)
+        gameplayPnlLayout.setVerticalGroup(
+            gameplayPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(gameplayPnlLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(gameplayPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(xCoord, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(gameplayPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(yCoord, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(862, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -65,18 +101,45 @@ public class GameWindow extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(gameplayPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 1394, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(gameplayPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 944, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+         if (evt.getKeyCode()== KeyEvent.VK_LEFT) {
+           System.out.println("LEFT");
+    }
+    if (evt.getKeyCode()== KeyEvent.VK_DOWN) {
+        System.out.println("down");
+    }
+    if (evt.getKeyCode()== KeyEvent.VK_RIGHT) {
+        System.out.println("right");
+    }
+    if (evt.getKeyCode()== KeyEvent.VK_UP) {
+       System.out.println("up");
+    }
+    }//GEN-LAST:event_formKeyPressed
+
+    private void gameplayPnlMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gameplayPnlMouseEntered
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_gameplayPnlMouseEntered
+
+    private void gameplayPnlMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gameplayPnlMouseMoved
+        // TODO add your handling code here:
+         xCoord.setText(String.valueOf(evt.getX()));
+         yCoord.setText(String.valueOf(evt.getY()));
+    }//GEN-LAST:event_gameplayPnlMouseMoved
 
     /**
      @param args the command line arguments
@@ -114,12 +177,14 @@ public class GameWindow extends javax.swing.JFrame {
             }
             
         });
-        BufferedImage image = new BufferedImage(960/30,960/30 , 1);
-        Graphics2D g = (Graphics2D) image.getGraphics();
         
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel gameplayPnl;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel xCoord;
+    private javax.swing.JLabel yCoord;
     // End of variables declaration//GEN-END:variables
 }

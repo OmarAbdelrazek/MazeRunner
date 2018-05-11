@@ -23,13 +23,115 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="455" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="57" max="32767" attributes="0"/>
+              <Component id="playerImgLbl" min="-2" pref="312" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="backBtn" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="tommyBtn" min="-2" pref="232" max="-2" attributes="0"/>
+                          <Component id="yasserBtn" min="-2" pref="232" max="-2" attributes="0"/>
+                          <Component id="omarBtn" alignment="0" min="-2" pref="232" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="ameerBtn" min="-2" pref="232" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="testBtn" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="39" max="32767" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="316" max="32767" attributes="0"/>
+                  <Component id="playBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="574" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Component id="playerImgLbl" min="-2" pref="102" max="-2" attributes="0"/>
+              <EmptySpace pref="73" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="ameerBtn" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
+                  <Component id="testBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="omarBtn" min="-2" pref="73" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="tommyBtn" min="-2" pref="73" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="yasserBtn" min="-2" pref="73" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="backBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="522" max="32767" attributes="0"/>
+                  <Component id="playBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="yasserBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Yasser"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="tommyBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tommy"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="omarBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Omar"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="ameerBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ameer"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="playerImgLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="hayb2a feh sora hena hat-set lma ydoos 3ala wahed :)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="backBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="BACK"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="playBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="PLAY!"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="testBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Testt"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="testBtnActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
 </Form>

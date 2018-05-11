@@ -83,13 +83,5 @@ public class Player1 {
     public void move() {
 
     }
-    public void pickup()
-    {
-        
-    }
-    public void CheckCollision()
-    {
-        
-    }
 
 }

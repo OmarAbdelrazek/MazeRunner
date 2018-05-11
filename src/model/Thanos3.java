@@ -6,10 +6,8 @@
 
 package model;
 
-import java.awt.Graphics2D;
 
-
-public class Thanos3 extends Cell  implements Monster{
+public class Thanos3  implements Monster{
 
     public Thanos3() {
     }
@@ -21,11 +19,6 @@ public class Thanos3 extends Cell  implements Monster{
 
     @Override
     public void power() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void draw(Graphics2D g,int i ,int j) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -6,7 +6,6 @@
 
 package model;
 
-import java.awt.Graphics2D;
 import java.awt.Image;
 
 
@@ -17,7 +16,7 @@ public class TreeWall8 extends Cell implements Wall{
 
 
     @Override
-    public void draw(Graphics2D g,int i ,int j) {
+    public void draw() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
