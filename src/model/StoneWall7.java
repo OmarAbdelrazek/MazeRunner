@@ -6,6 +6,7 @@
 
 package model;
 
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import javax.swing.JPanel;
@@ -18,7 +19,7 @@ public class StoneWall7 extends Cell implements Wall{
 
 
     @Override
-    public void draw(JPanel j ,Graphics2D g) {
+    public void draw(JPanel j ,Graphics g) {
 
     }
 

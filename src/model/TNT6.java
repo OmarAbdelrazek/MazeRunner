@@ -6,6 +6,7 @@
 
 package model;
 
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
@@ -20,7 +21,7 @@ public class TNT6 extends Cell implements Bomb{
     }
 
     @Override
-    public void draw(JPanel j ,Graphics2D g) {
+    public void draw(JPanel j ,Graphics g) {
         
     }
 
