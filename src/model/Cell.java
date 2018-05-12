@@ -7,6 +7,7 @@ package model;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import javafx.scene.canvas.GraphicsContext;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -17,7 +18,7 @@ import javax.swing.JPanel;
 public abstract class Cell {
     private int i;
     private int j;
-    public abstract void draw(JPanel j ,Graphics g);
+    public abstract void draw(GraphicsContext gc);
 
     public int getI() {
         return i;

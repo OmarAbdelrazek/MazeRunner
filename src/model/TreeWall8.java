@@ -9,8 +9,10 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import javafx.scene.canvas.GraphicsContext;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import view.*;
 
 public class TreeWall8 extends Cell implements Wall {
 
@@ -18,20 +20,13 @@ public class TreeWall8 extends Cell implements Wall {
     }
 
     @Override
-    public void draw(JPanel jpanel, Graphics g) {
-        ImageIcon ic = new ImageIcon("crate.png");
-        Image image = ic.getImage(); // transform it 
-        Image newimg = image.getScaledInstance(500, 500, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
-        ImageIcon uc = new ImageIcon(newimg);
-        
-        int x = 960 / 30;
-        int y = 960 / 30;
-        int XonGrid = x * (this.getI() + 1);
-        int YonGrid = y * (this.getJ() + 1);
-        uc.paintIcon(jpanel, g, 0, 0);
-        g.drawImage(uc.getImage(), 0, 0, null);
-
-        System.out.println(uc);
+    public void draw(GraphicsContext gc) {
+        javafx.scene.image.Image img = new javafx.scene.image.Image("Resources/StoneWall.png");        
+        double x = GameplayController.CellHeight;
+        double y = GameplayController.CellWidth;
+        double XonGrid = x * (this.getI());
+        double YonGrid = y * (this.getJ());
+        gc.drawImage(img, XonGrid, YonGrid, GameplayController.CellHeight,GameplayController.CellWidth);
     }
 
     @Override

@@ -8,7 +8,9 @@ package model;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import javafx.scene.canvas.GraphicsContext;
 import javax.swing.JPanel;
+import view.GameplayController;
 
 
 public class TNT6 extends Cell implements Bomb{
@@ -21,8 +23,15 @@ public class TNT6 extends Cell implements Bomb{
     }
 
     @Override
-    public void draw(JPanel j ,Graphics g) {
-        
+    public void draw(GraphicsContext gc) {
+        javafx.scene.image.Image img = new javafx.scene.image.Image("crate.png");        
+        double x = GameplayController.CellHeight;
+        double y = GameplayController.CellWidth;
+        double XonGrid = x * (this.getI());
+        double YonGrid = y * (this.getJ());
+        gc.drawImage(img, XonGrid, YonGrid, GameplayController.CellHeight,GameplayController.CellWidth);
     }
+
+
 
 }

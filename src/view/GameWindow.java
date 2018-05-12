@@ -11,6 +11,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
+import javafx.scene.canvas.GraphicsContext;
 import javax.swing.JFrame;
 import model.*;
 
@@ -25,7 +26,7 @@ public class GameWindow extends javax.swing.JFrame {
      */
     public static int Height;
     public static int Width;
-    public Graphics g;
+    public GraphicsContext gc;
     public GameWindow() {
         initComponents();
       //  this.setSize(1440, 960);
@@ -33,11 +34,11 @@ public class GameWindow extends javax.swing.JFrame {
         gameplayPnl.setSize(this.getWidth(), this.getHeight());
         DrawMaze1.drawImages(gameplayPnl);
         gameplayPnl.setVisible(false);
-        g = getGraphics();
+       // gc = this.getGraphics();
         TreeWall8 test = new TreeWall8();
         test.setI(0);
         test.setJ(0);
-        test.draw(gameplayPnl,g);
+        test.draw(gc);
         gameplayPnl.repaint();
     }
 

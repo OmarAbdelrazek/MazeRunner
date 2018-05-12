@@ -6,8 +6,11 @@
 
 package model;
 
+import javafx.scene.canvas.GraphicsContext;
+import view.GameplayController;
 
-public class Thanos3  implements Monster{
+
+public class Thanos3 extends Cell implements Monster{
 
     public Thanos3() {
     }
@@ -20,6 +23,16 @@ public class Thanos3  implements Monster{
     @Override
     public void power() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void draw(GraphicsContext gc) {
+        javafx.scene.image.Image img = new javafx.scene.image.Image("crate.png");        
+        double x = GameplayController.CellHeight;
+        double y = GameplayController.CellWidth;
+        double XonGrid = x * (this.getI());
+        double YonGrid = y * (this.getJ());
+        gc.drawImage(img, XonGrid, YonGrid, GameplayController.CellHeight,GameplayController.CellWidth);
     }
 
 }
