@@ -6,6 +6,9 @@
 
 package model;
 
+import java.awt.Graphics2D;
+import javax.swing.JPanel;
+
 
 public class TNT6 extends Cell implements Bomb{
 
@@ -17,8 +20,8 @@ public class TNT6 extends Cell implements Bomb{
     }
 
     @Override
-    public void draw() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void draw(JPanel j ,Graphics2D g) {
+        
     }
 
 }

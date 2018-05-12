@@ -8,7 +8,9 @@ package view;
 import controller.DrawMaze1;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
+import model.*;
 
 /**
 
@@ -21,6 +23,7 @@ public class GameWindow extends javax.swing.JFrame {
      */
     public static int Height;
     public static int Width;
+    private Graphics2D g;
     public GameWindow() {
         initComponents();
       //  this.setSize(1440, 960);
@@ -28,7 +31,11 @@ public class GameWindow extends javax.swing.JFrame {
         gameplayPnl.setSize(this.getWidth(), this.getHeight());
         gameplayPnl.setBackground(Color.LIGHT_GRAY);
         DrawMaze1.drawImages(gameplayPnl);
-        
+        g = (Graphics2D) gameplayPnl.getGraphics();
+        TreeWall8 test = new TreeWall8();
+        test.setI(0);
+        test.setJ(0);
+        test.draw(gameplayPnl,g);
     }
 
     /**
@@ -53,6 +60,7 @@ public class GameWindow extends javax.swing.JFrame {
             }
         });
 
+        gameplayPnl.setForeground(new java.awt.Color(255, 255, 255));
         gameplayPnl.setPreferredSize(new java.awt.Dimension(1400, 950));
         gameplayPnl.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {

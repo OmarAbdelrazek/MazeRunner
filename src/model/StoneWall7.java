@@ -6,15 +6,20 @@
 
 package model;
 
+import java.awt.Graphics2D;
 import java.awt.Image;
+import javax.swing.JPanel;
 
 
 public class StoneWall7 extends Cell implements Wall{
 
+    public StoneWall7() {
+    }
+
 
     @Override
-    public void draw() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void draw(JPanel j ,Graphics2D g) {
+
     }
 
     @Override

@@ -5,6 +5,10 @@
  */
 package model;
 
+import java.awt.Graphics2D;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Tommy
@@ -12,7 +16,7 @@ package model;
 public abstract class Cell {
     private int i;
     private int j;
-    public abstract void draw();
+    public abstract void draw(JPanel j ,Graphics2D g);
 
     public int getI() {
         return i;
@@ -29,5 +33,6 @@ public abstract class Cell {
     public void setJ(int j) {
         this.j = j;
     }
-    
+
+  
 }
