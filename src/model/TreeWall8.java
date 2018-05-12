@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -18,7 +19,7 @@ public class TreeWall8 extends Cell implements Wall {
 
     @Override
     public void draw(JPanel jpanel, Graphics g) {
-        ImageIcon ic = new ImageIcon(getClass().getResource("crate.png"));
+        ImageIcon ic = new ImageIcon("crate.png");
         Image image = ic.getImage(); // transform it 
         Image newimg = image.getScaledInstance(500, 500, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
         ImageIcon uc = new ImageIcon(newimg);
@@ -29,7 +30,9 @@ public class TreeWall8 extends Cell implements Wall {
         int YonGrid = y * (this.getJ() + 1);
         uc.paintIcon(jpanel, g, 0, 0);
         g.drawImage(uc.getImage(), 0, 0, null);
-        g.fillOval(0, 0, 200, 200);
+        g.setColor(Color.red);
+        g.fillOval(100, 100, 200, 200);
+        jpanel.repaint();
         System.out.println(uc);
     }
 
