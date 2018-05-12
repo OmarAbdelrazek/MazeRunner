@@ -25,19 +25,20 @@ public class GameWindow extends javax.swing.JFrame {
      */
     public static int Height;
     public static int Width;
-    private Graphics g;
+    public Graphics g;
     public GameWindow() {
         initComponents();
       //  this.setSize(1440, 960);
         this.setResizable(false);
         gameplayPnl.setSize(this.getWidth(), this.getHeight());
-        gameplayPnl.setBackground(Color.LIGHT_GRAY);
         DrawMaze1.drawImages(gameplayPnl);
-        g = gameplayPnl.getGraphics();
+        gameplayPnl.setVisible(false);
+        g = getGraphics();
         TreeWall8 test = new TreeWall8();
         test.setI(0);
         test.setJ(0);
         test.draw(gameplayPnl,g);
+        gameplayPnl.repaint();
     }
 
     /**

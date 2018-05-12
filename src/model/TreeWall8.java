@@ -29,7 +29,7 @@ public class TreeWall8 extends Cell implements Wall {
         int YonGrid = y * (this.getJ() + 1);
         uc.paintIcon(jpanel, g, 0, 0);
         g.drawImage(uc.getImage(), 0, 0, null);
-        g.fillOval(0, 0, 200, 200);
+        g.fillOval(0, 0, 500, 500);
         System.out.println(uc);
     }
 
