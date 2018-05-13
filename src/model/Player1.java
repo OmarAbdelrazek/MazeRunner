@@ -73,11 +73,11 @@ public class Player1 {
     }
 
     public void die() {
-        //7amdy
+        
     }
 
     public void hit() {
-        //7amdy brdo
+        
     }
 
     public void move() {

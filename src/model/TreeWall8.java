@@ -26,7 +26,7 @@ public class TreeWall8 extends Cell implements Wall {
         double y = GameplayController.CellWidth;
         double XonGrid = x * (this.getI());
         double YonGrid = y * (this.getJ());
-        gc.drawImage(img, XonGrid, YonGrid, GameplayController.CellHeight,GameplayController.CellWidth);
+        gc.drawImage(img, XonGrid, YonGrid, GameplayController.CellWidth,GameplayController.CellHeight);
     }
 
     @Override

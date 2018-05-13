@@ -32,7 +32,7 @@ public class Ultron4 extends Cell implements Monster{
         double y = GameplayController.CellWidth;
         double XonGrid = x * (this.getI());
         double YonGrid = y * (this.getJ());
-        gc.drawImage(img, XonGrid, YonGrid, GameplayController.CellHeight,GameplayController.CellWidth);
+        gc.drawImage(img, XonGrid, YonGrid, GameplayController.CellWidth,GameplayController.CellHeight);
     }
 
 }

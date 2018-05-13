@@ -44,7 +44,7 @@ public class GameplayController implements Initializable {
         gameplayPnl.setHeight(960);
         gameplayPnl.setWidth(1000);
         MyDrawingEngine drawingengine = new MyDrawingEngine();
-        CellHeight = gameplayPnl.getHeight() / 30;
+        CellHeight = gameplayPnl.getHeight() / 35;
         CellWidth = gameplayPnl.getWidth() / 30;
         gc = gameplayPnl.getGraphicsContext2D();
         for (j = 0; j < 30; j++) {

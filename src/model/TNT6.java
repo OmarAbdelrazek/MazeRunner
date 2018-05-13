@@ -29,7 +29,7 @@ public class TNT6 extends Cell implements Bomb{
         double y = GameplayController.CellWidth;
         double XonGrid = x * (this.getI());
         double YonGrid = y * (this.getJ());
-        gc.drawImage(img, XonGrid, YonGrid, GameplayController.CellHeight,GameplayController.CellWidth);
+        gc.drawImage(img, XonGrid, YonGrid, GameplayController.CellWidth,GameplayController.CellHeight);
     }
 
 
