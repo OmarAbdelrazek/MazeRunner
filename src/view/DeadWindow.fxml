@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="238.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DeadWindowController">
+   <children>
+      <Button fx:id="exitBtn" layoutX="224.0" layoutY="184.0" mnemonicParsing="false" onAction="#exitBtnAction" prefHeight="40.0" prefWidth="91.0" text="Exit" />
+      <Label layoutX="88.0" layoutY="62.0" prefHeight="90.0" prefWidth="361.0" text="hahahaha you are dead :D" textFill="#b91a1a">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

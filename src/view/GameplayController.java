@@ -17,10 +17,18 @@ import javafx.scene.canvas.GraphicsContext;
 import view.*;
 import controller.*;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 import model.*;
 
 /**
@@ -42,6 +50,8 @@ public class GameplayController implements Initializable {
     MyDrawingEngine drawingengine = new MyDrawingEngine();
     @FXML
     private Canvas gameplayPnl;
+    @FXML
+    private Label hitLbl;
 
     /**
      * Initializes the controller class.
@@ -76,9 +86,28 @@ public class GameplayController implements Initializable {
     private void gameplayKeyPressed(KeyEvent event) {
 
         if (event.getCode() == KeyCode.UP) {
-            if (load.maze1[x][y - 1] == 7) {
+            if (load.maze1[x][y - 1] == 7 || load.maze1[x][y - 1] == 8) {
 
             } else {
+                if(load.maze1[x][y-1] == 5  ){
+                    hitLbl.setText("-50");
+                    
+                }
+                else if(load.maze1[x][y-1] == 6)
+                {
+                     Parent choosePlayerParent;
+        try {
+            choosePlayerParent = FXMLLoader.load(getClass().getResource("DeadWindow.fxml"));
+            Scene choosePlayerScene = new Scene(choosePlayerParent);
+           
+        
+         Stage s = (Stage) ((Node) event.getSource()).getScene().getWindow();
+         s.setScene(choosePlayerScene);
+         s.show();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+                }
                 load.maze1[x][y] = 0;
                 load.maze1[x][y - 1] = 1;
                 y--;
@@ -93,9 +122,28 @@ public class GameplayController implements Initializable {
             } 
         }
         if (event.getCode() == KeyCode.DOWN) {
-            if (load.maze1[x][y + 1] == 7) {
+            if (load.maze1[x][y + 1] == 7 || load.maze1[x][y + 1] == 8) {
 
             } else {
+                if(load.maze1[x][y+1] == 5  ){
+                    hitLbl.setText("-50");
+                    
+                }
+                else if(load.maze1[x][y+1] == 6)
+                {
+                     Parent choosePlayerParent;
+        try {
+            choosePlayerParent = FXMLLoader.load(getClass().getResource("DeadWindow.fxml"));
+            Scene choosePlayerScene = new Scene(choosePlayerParent);
+           
+        
+         Stage s = (Stage) ((Node) event.getSource()).getScene().getWindow();
+         s.setScene(choosePlayerScene);
+         s.show();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+                }
                 load.maze1[x][y] = 0;
                 load.maze1[x][y + 1] = 1;
                 y++;
@@ -110,9 +158,28 @@ public class GameplayController implements Initializable {
             }
         }
         if (event.getCode() == KeyCode.RIGHT) {
-            if (load.maze1[x + 1][y] == 7) {
+            if (load.maze1[x + 1][y] == 7 || load.maze1[x + 1][y] == 8) {
 
             } else {
+                if(load.maze1[x+1][y] == 5  ){
+                    hitLbl.setText("-50");
+                    
+                }
+                else if(load.maze1[x+1][y] == 6)
+                {
+                     Parent choosePlayerParent;
+        try {
+            choosePlayerParent = FXMLLoader.load(getClass().getResource("DeadWindow.fxml"));
+            Scene choosePlayerScene = new Scene(choosePlayerParent);
+           
+        
+         Stage s = (Stage) ((Node) event.getSource()).getScene().getWindow();
+         s.setScene(choosePlayerScene);
+         s.show();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+                }
                 load.maze1[x][y] = 0;
                 load.maze1[x + 1][y] = 1;
                 x++;
@@ -127,9 +194,28 @@ public class GameplayController implements Initializable {
             }
         }
         if (event.getCode() == KeyCode.LEFT) {
-            if (load.maze1[x - 1][y] == 7) {
+            if (load.maze1[x - 1][y] == 7 || load.maze1[x - 1][y] == 8) {
 
             } else {
+                if(load.maze1[x-1][y] == 5  ){
+                    hitLbl.setText("-50");
+                    
+                }
+                else if(load.maze1[x-1][y] == 6)
+                {
+                     Parent choosePlayerParent;
+        try {
+            choosePlayerParent = FXMLLoader.load(getClass().getResource("DeadWindow.fxml"));
+            Scene choosePlayerScene = new Scene(choosePlayerParent);
+           
+        
+         Stage s = (Stage) ((Node) event.getSource()).getScene().getWindow();
+         s.setScene(choosePlayerScene);
+         s.show();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+                }
                 load.maze1[x][y] = 0;
                 load.maze1[x-1][y] = 1;
                 x--;
