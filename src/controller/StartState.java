@@ -6,11 +6,14 @@
 
 package controller;
 
+import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Label;
+
 
 public class StartState implements GameState{
 
-    @Override
-    public void gameState(String type) {
+   @Override
+    public void gameState(Context c,Canvas gameplayCanvas) {
     }
 
 }

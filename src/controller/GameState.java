@@ -5,11 +5,14 @@
  */
 package controller;
 
+import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Label;
+
 /**
 
  @author Omar's PC
  */
 public interface GameState {
-    public void gameState(String type);
+    public void gameState(Context c,Canvas gameplayCanvas );
     
 }

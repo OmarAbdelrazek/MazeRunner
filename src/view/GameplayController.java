@@ -27,6 +27,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import model.*;
@@ -232,6 +233,31 @@ public class GameplayController implements Initializable {
         if (event.getCode() == KeyCode.SPACE) {
             System.out.println("space");
         }
+        if(event.getCode() == KeyCode.P){
+            Context c = new Context();
+            PauseState p = new PauseState();
+            p.gameState(c, gameplayPnl);
+            
+      //  gc.setFill(Color.RED);
+      //  gc.setStroke(Color.RED);
+        gc.setLineWidth(60);
+        gc.fillText("Game Paused", gameplayPnl.getWidth()/2, 0);
+        if(event.getCode() == KeyCode.C){
+            System.out.println("in C");
+            Context cd = new Context();
+            ContinueState con = new ContinueState();
+            con.gameState(cd, gameplayPnl);
+            for (j = 0; j < 30; j++) {
+                    for (i = 0; i < 30; i++) {
+
+                        drawingengine.parse(load.maze1[i][j], i, j, gc);
+                    }
+                }
+        }
+        else 
+        {}
+        }
+        
 
     }
 }

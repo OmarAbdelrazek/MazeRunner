@@ -6,12 +6,16 @@
 
 package controller;
 
+import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Label;
+
 
 public class EndState implements GameState{
 
+    
+
     @Override
-    public void gameState(String type) {
-        
+    public void gameState(Context c,Canvas gameplayCanvas) {
     }
 
 }
