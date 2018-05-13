@@ -12,7 +12,7 @@ import javafx.scene.control.Label;
 
 public class EndState implements GameState{
 
-    
+   
 
     @Override
     public void gameState(Context c,Canvas gameplayCanvas) {
