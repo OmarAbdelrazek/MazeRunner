@@ -52,7 +52,9 @@ public class ChoosePlayerController implements Initializable {
         
          Stage s = (Stage) ((Node) event.getSource()).getScene().getWindow();
          s.setScene(choosePlayerScene);
+
          //s.setFullScreen(true);
+
          s.show();
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex.toString());

@@ -44,9 +44,10 @@ public class DrawMaze1 {
       }
     public static void drawImages(JPanel gameplayPnl){
         loadImages();
+        LoadMaze load = new LoadMaze();
        for (int i=0 ; i< 8 ; i++){
            for(int j=0 ; j< 21 ; j++){
-               if(LoadMaze.maze1[i][j] == 7){
+               if(load.maze1[i][j] == 7){
                    
                    
                }

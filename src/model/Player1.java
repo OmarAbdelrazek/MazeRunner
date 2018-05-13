@@ -5,6 +5,9 @@
  */
 package model;
 
+import javafx.scene.canvas.GraphicsContext;
+import view.GameplayController;
+
 public class Player1 {
 
     private int i;
@@ -13,6 +16,22 @@ public class Player1 {
     private int health = 100;
     private int lives = 3;
     private int score = 0;
+
+    public int getI() {
+        return i;
+    }
+
+    public void setI(int i) {
+        this.i = i;
+    }
+
+    public int getJ() {
+        return j;
+    }
+
+    public void setJ(int j) {
+        this.j = j;
+    }
 
     public int getScore() {
         return score;
@@ -60,14 +79,22 @@ public class Player1 {
 
     }
 
-    public Player1 getInstance() {
+    public static Player1 getInstance() {
         if (player == null) {
             player = new Player1();
         }
 
         return player;
     }
-
+    public void draw(GraphicsContext gc) {
+        javafx.scene.image.Image img = new javafx.scene.image.Image("Resources/player.gif");        
+        double x = GameplayController.CellHeight;
+        double y = GameplayController.CellWidth;
+        double XonGrid = x * (this.getI());
+        double YonGrid = y * (this.getJ());
+        gc.drawImage(img, XonGrid, YonGrid, GameplayController.CellWidth,GameplayController.CellHeight+6);
+    }
+    
     public void fire() {
 
     }

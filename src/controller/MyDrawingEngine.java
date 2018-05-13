@@ -27,32 +27,20 @@ public int[][] Grid = new int[VerticalCells][HorizontalCells];
     public MyDrawingEngine() {
     }
 
-/*public void parse(int object,int i ,int j,GraphicsContext gc)
-        
-{
-    if(object==3||object==4)
-    {
-     MonsterFactory MF = new MonsterFactory();
-     Monster m =  MF.createMonster(object);
-     m.draw(gc);
-    }
-    else if (object==5||object==6)
-    {
-     WallFactory WF = new WallFactory();
-     Wall w =  WF.createWall(object);
-     w.draw(gc);
-    }
-    else if (object==7||object==8)
-    {
-     BombFactory BF = new BombFactory();
-     Bomb b =  BF.CreateBomb(object);
-     b.draw(gc);
-    }
-}*/
+
     public void parse(int object,int i ,int j,GraphicsContext gc)
         
 {
-    if(object==3)
+    Player1 P;
+    Player1 p = Player1.getInstance();
+    if(object==1)
+    {
+     Thanos3 t = new Thanos3();
+     p.setI(i);
+     p.setJ(j);
+     p.draw(gc);
+    }
+    else if(object==3)
     {
      Thanos3 t = new Thanos3();
      t.setI(i);

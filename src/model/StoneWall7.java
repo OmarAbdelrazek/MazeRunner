@@ -32,7 +32,7 @@ public class StoneWall7 extends Cell implements Wall{
         double y = GameplayController.CellWidth;
         double XonGrid = x * (this.getI());
         double YonGrid = y * (this.getJ());
-        gc.drawImage(img, XonGrid, YonGrid, GameplayController.CellWidth,GameplayController.CellHeight);
+        gc.drawImage(img, XonGrid, YonGrid, GameplayController.CellWidth,GameplayController.CellHeight+6);
     }
 
 }
