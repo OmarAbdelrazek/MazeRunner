@@ -24,7 +24,10 @@ public int VerticalCells = 30;
 //public int CellWidth = GameWindow.Width/HorizontalCells;
 public int[][] Grid = new int[VerticalCells][HorizontalCells];
 
-public void parse(int object,int i ,int j,GraphicsContext gc)
+    public MyDrawingEngine() {
+    }
+
+/*public void parse(int object,int i ,int j,GraphicsContext gc)
         
 {
     if(object==3||object==4)
@@ -44,6 +47,45 @@ public void parse(int object,int i ,int j,GraphicsContext gc)
      BombFactory BF = new BombFactory();
      Bomb b =  BF.CreateBomb(object);
      b.draw(gc);
+    }
+}*/
+    public void parse(int object,int i ,int j,GraphicsContext gc)
+        
+{
+    if(object==3)
+    {
+     Thanos3 t = new Thanos3();
+     t.setI(i);
+     t.setJ(j);
+     t.draw(gc);
+    }
+    else if(object==4)
+    {
+     Ultron4 t = new Ultron4();
+     t.setI(i);
+     t.setJ(j);
+     t.draw(gc);
+    }
+    else if (object==5)
+    {
+     Grenade5 t = new Grenade5();
+     t.setI(i);
+     t.setJ(j);
+     t.draw(gc);
+    }
+    else if (object==6)
+    {
+     TNT6 t = new TNT6();
+     t.setI(i);
+     t.setJ(j);
+     t.draw(gc);
+    }
+    else if (object==7)
+    {
+     StoneWall7 t = new StoneWall7();
+     t.setI(i);
+     t.setJ(j);
+     t.draw(gc);
     }
 }
 

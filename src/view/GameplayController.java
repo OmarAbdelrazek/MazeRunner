@@ -14,10 +14,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import model.TreeWall8;
 import view.*;
 import controller.*;
 import static controller.LoadMaze.maze1;
+import model.*;
 
 /**
  * FXML Controller class
@@ -25,13 +25,13 @@ import static controller.LoadMaze.maze1;
  * @author ooomooo
  */
 public class GameplayController implements Initializable {
+
     public static int Height;
     public static int Width;
     public static double CellHeight;
     public static double CellWidth;
     GraphicsContext gc;
-    MyDrawingEngine drawingengine;
-        
+    int i, j;
 
     @FXML
     private Canvas gameplayPnl;
@@ -41,16 +41,18 @@ public class GameplayController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        CellHeight=gameplayPnl.getHeight()/30;
-        CellWidth=gameplayPnl.getWidth()/30;
-        gc = gameplayPnl.getGraphicsContext2D();        
-        for(int i=0 ;i<8;i++)
-        {
-            for(int j=0 ;j<21;j++)
-            {
-                drawingengine.parse(maze1[i][j], i, j, gc);
+        gameplayPnl.setHeight(960);
+        gameplayPnl.setWidth(1000);
+        MyDrawingEngine drawingengine = new MyDrawingEngine();
+        CellHeight = gameplayPnl.getHeight() / 30;
+        CellWidth = gameplayPnl.getWidth() / 30;
+        gc = gameplayPnl.getGraphicsContext2D();
+        for (j = 0; j < 30; j++) {
+            for (i = 0; i < 30; i++) {
+                
+                drawingengine.parse(3, i, j, gc);
             }
+
         }
-    }    
-    
+    }
 }

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="960.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="view.GameplayController">
+<AnchorPane id="AnchorPane" prefHeight="960.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GameplayController">
    <children>
-      <Canvas fx:id="gameplayPnl" height="552.0" width="745.0" />
+      <Canvas fx:id="gameplayPnl" height="862.0" width="1012.0" />
    </children>
 </AnchorPane>
