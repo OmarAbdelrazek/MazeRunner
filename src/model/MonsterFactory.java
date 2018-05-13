@@ -7,6 +7,9 @@ package model;
 
 public class MonsterFactory {
 
+    public MonsterFactory() {
+    }
+
     public Monster createMonster(int type) {
         if (type == 3) {
             return new Thanos3();

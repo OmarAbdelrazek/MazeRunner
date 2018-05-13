@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 public abstract class Cell {
     private int i;
     private int j;
-    public abstract void draw(GraphicsContext gc);
+
 
     public int getI() {
         return i;

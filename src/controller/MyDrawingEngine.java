@@ -9,6 +9,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javafx.scene.canvas.GraphicsContext;
+import model.*;
 //import view.*;
 
 /**
@@ -22,10 +24,27 @@ public int VerticalCells = 30;
 //public int CellWidth = GameWindow.Width/HorizontalCells;
 public int[][] Grid = new int[VerticalCells][HorizontalCells];
 
-public void parse(int object,int i ,int j,Graphics g)
+public void parse(int object,int i ,int j,GraphicsContext gc)
         
 {
-    //g.drawImage(image, i, i, io);
+    if(object==3||object==4)
+    {
+     MonsterFactory MF = new MonsterFactory();
+     Monster m =  MF.createMonster(object);
+     m.draw(gc);
+    }
+    else if (object==5||object==6)
+    {
+     WallFactory WF = new WallFactory();
+     Wall w =  WF.createWall(object);
+     w.draw(gc);
+    }
+    else if (object==7||object==8)
+    {
+     BombFactory BF = new BombFactory();
+     Bomb b =  BF.CreateBomb(object);
+     b.draw(gc);
+    }
 }
 
     @Override

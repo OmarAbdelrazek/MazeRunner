@@ -11,6 +11,9 @@ package model;
  */
 public class WallFactory {
 
+    public WallFactory() {
+    }
+
 
     public Wall createWall(int type) {
         if (type == 7) {

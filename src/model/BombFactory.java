@@ -8,6 +8,10 @@ package model;
 
 
 public class BombFactory {
+
+    public BombFactory() {
+    }
+    
     public Bomb CreateBomb(int type){
         if(type == 5)
             return new Grenade5();

@@ -22,7 +22,7 @@ public class Grenade5 extends Cell implements Bomb{
 
     @Override
     public void draw(GraphicsContext gc) {
-        javafx.scene.image.Image img = new javafx.scene.image.Image("crate.png");        
+        javafx.scene.image.Image img = new javafx.scene.image.Image("Resources/bomb1.png");        
         double x = GameplayController.CellHeight;
         double y = GameplayController.CellWidth;
         double XonGrid = x * (this.getI());

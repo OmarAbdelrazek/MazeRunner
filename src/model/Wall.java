@@ -5,12 +5,15 @@
  */
 package model;
 
+import javafx.scene.canvas.GraphicsContext;
+
 /**
  *
  * @author Tommy
  */
 public interface Wall {
     public void hit();
+    public void draw(GraphicsContext gc);
     
     
 }

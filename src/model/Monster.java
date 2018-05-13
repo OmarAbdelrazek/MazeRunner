@@ -5,6 +5,8 @@
  */
 package model;
 
+import javafx.scene.canvas.GraphicsContext;
+
 /**
 
  @author Omar's PC
@@ -12,6 +14,7 @@ package model;
 public interface Monster {
     public void health();
     public void power();
+        public void draw(GraphicsContext gc);
     
     
 }

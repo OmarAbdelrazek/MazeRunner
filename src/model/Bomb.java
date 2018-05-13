@@ -6,11 +6,14 @@
  */
 package model;
 
+import javafx.scene.canvas.GraphicsContext;
+
 /**
 
  @author Omar's PC
  */
 public interface Bomb {
     public void explode();
+        public void draw(GraphicsContext gc);
     
 }

@@ -21,7 +21,7 @@ public class TreeWall8 extends Cell implements Wall {
 
     @Override
     public void draw(GraphicsContext gc) {
-        javafx.scene.image.Image img = new javafx.scene.image.Image("Resources/StoneWall.png");        
+        javafx.scene.image.Image img = new javafx.scene.image.Image("Resources/treewall.jpg");        
         double x = GameplayController.CellHeight;
         double y = GameplayController.CellWidth;
         double XonGrid = x * (this.getI());
