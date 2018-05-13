@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import view.*;
 import controller.*;
+import java.awt.event.MouseEvent;
 
 /**
  * FXML Controller class
@@ -30,6 +31,8 @@ public class ChoosePlayerController implements Initializable {
 
     @FXML
     private Button kokoBtn;
+    private Button timmyBtn;
+    private Button backBtn;
 
     /**
      * Initializes the controller class.
@@ -49,11 +52,47 @@ public class ChoosePlayerController implements Initializable {
         
          Stage s = (Stage) ((Node) event.getSource()).getScene().getWindow();
          s.setScene(choosePlayerScene);
-         s.setFullScreen(true);
+         //s.setFullScreen(true);
          s.show();
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex.toString());
         }
     }
+    
+    @FXML
+    public void timmyBtnAction(ActionEvent event2){
+           Parent choosePlayerParent;
+        try {
+            choosePlayerParent = FXMLLoader.load(getClass().getResource("Gameplay.fxml"));
+            Scene choosePlayerScene = new Scene(choosePlayerParent);
+           
+        
+         Stage s = (Stage) ((Node) event2.getSource()).getScene().getWindow();
+         s.setScene(choosePlayerScene);
+         //s.setFullScreen(true);
+         s.show();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+    }
+    @FXML
+    private void backBtnAction(ActionEvent event) {
+        Parent menuParent;
+        try {
+            menuParent = FXMLLoader.load(getClass().getResource("menu.fxml"));
+            Scene menuScene = new Scene(menuParent);
+           
+        
+         Stage s = (Stage) ((Node) event.getSource()).getScene().getWindow();
+         s.setScene(menuScene);
+         s.show();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+            
+    
+    }
+
+    
     
 }
