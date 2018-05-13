@@ -19,6 +19,8 @@ import controller.*;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import model.*;
 
 /**
@@ -50,6 +52,8 @@ public class GameplayController implements Initializable {
         CellHeight = gameplayPnl.getHeight() / 35;
         CellWidth = gameplayPnl.getWidth() / 30;
         gc = gameplayPnl.getGraphicsContext2D();
+        gameplayPnl.setFocusTraversable(true);
+
         LoadMaze load = new LoadMaze();
         try {
             load.load();
@@ -63,5 +67,17 @@ public class GameplayController implements Initializable {
             }
 
         }
+    }
+
+    @FXML
+    private void gameplayKeyPressed(KeyEvent event) {
+        if(event.getCode() == KeyCode.UP){
+            System.out.println("up");}
+        if(event.getCode() == KeyCode.DOWN){
+            System.out.println("down");}
+        if(event.getCode() == KeyCode.RIGHT){
+            System.out.println("right");}
+        if(event.getCode() == KeyCode.LEFT){
+            System.out.println("left");}
     }
 }
