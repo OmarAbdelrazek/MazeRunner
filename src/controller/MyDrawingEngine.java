@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javafx.scene.canvas.GraphicsContext;
 import model.*;
-//import view.*;
+import view.*;
 
 /**
  *
@@ -37,6 +37,15 @@ public int[][] Grid = new int[VerticalCells][HorizontalCells];
     if(object==1)
     {
      p.draw(gc,i,j);
+        GameplayController.x=i;
+        GameplayController.y=j;
+    }
+    else if(object==2)
+    {
+     Coin2 t = new Coin2();
+     t.setI(i);
+     t.setJ(j);
+     t.draw(gc);
     }
     else if(object==3)
     {
@@ -76,6 +85,13 @@ public int[][] Grid = new int[VerticalCells][HorizontalCells];
     else if (object==8)
     {
      Crate8 t = new Crate8();
+     t.setI(i);
+     t.setJ(j);
+     t.draw(gc);
+    }
+     else if(object==10)
+    {
+     Bullets10 t = new Bullets10();
      t.setI(i);
      t.setJ(j);
      t.draw(gc);

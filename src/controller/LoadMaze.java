@@ -13,6 +13,7 @@ import java.io.FileReader;
 
 import java.io.IOException;
 import java.util.Scanner;
+import view.*;
 
 
 public class LoadMaze {
@@ -21,9 +22,10 @@ public class LoadMaze {
     public void setMaze1(int[][] maze1) {
         this.maze1 = maze1;
     }
-    private static String [] lines = new String[30];
+    private static String [] lines = new String[33];
     private static String[] splitedLine; 
     private static int linesNumber = 0;
+    private static int loadLin = 0;
 
     public LoadMaze() {
     }
@@ -75,4 +77,58 @@ public class LoadMaze {
 		}
 
 }
+    public void loadSaved() throws FileNotFoundException{
+        try {
+			File file = new File("loadGame.txt");
+			FileReader fileReader = new FileReader(file);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			StringBuffer stringBuffer = new StringBuffer();
+			String line;
+			while ((line = bufferedReader.readLine()) != null) {
+				stringBuffer.append(line);
+				stringBuffer.append(" ");
+                                lines[loadLin] = line;
+                                loadLin++;
+			}
+			fileReader.close();
+			System.out.println("Contents of file:");
+			System.out.println(stringBuffer.toString());
+                        System.out.printf("\n\n\n");
+                        for(int i=0 ; i< 30 ; i++){
+                            
+                            splitedLine = new String[30];
+                            String[] lineInt = lines[i].split(" ");
+                            for(int j=0;j<30;j++){
+                                maze1[j][i] = Integer.parseInt(lineInt[j]);
+                                System.out.println(maze1[i][j] + " ");
+                               
+                            }
+                            GameplayController.health = Integer.parseInt(lines[30]);
+                            GameplayController.score = Integer.parseInt(lines[31]);
+                            GameplayController.bullets = Integer.parseInt(lines[32]);
+                            
+                           
+                            
+                          //  System.out.println("line num" + i);
+                            //System.out.println(lineInt[i]);
+                            
+                            
+                        }
+                        
+                         for(int i=0 ; i<30 ; i++){
+                                for(int j=0 ; j<30 ; j++){
+                                    System.out.print(maze1[i][j] + " ");
+                                    
+                                    
+                                }
+                                System.out.println("");
+                            }
+                        
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        
+
+
+    }
 }
