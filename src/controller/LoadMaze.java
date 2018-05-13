@@ -16,20 +16,24 @@ import java.util.Scanner;
 
 
 public class LoadMaze {
-    public static int[][] maze1 = new int[8][21];
-    private static String [] lines = new String[8];
+    public int[][] maze1 = new int[30][30];
+    private static String [] lines = new String[30];
     private static String[] splitedLine; 
     private static int linesNumber = 0;
-    public static void load() throws FileNotFoundException{
+
+    public LoadMaze() {
+    }
+    
+    public void load() throws FileNotFoundException{
         try {
-			File file = new File("maze1.txt");
+			File file = new File("maze.txt");
 			FileReader fileReader = new FileReader(file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 			StringBuffer stringBuffer = new StringBuffer();
 			String line;
 			while ((line = bufferedReader.readLine()) != null) {
 				stringBuffer.append(line);
-				stringBuffer.append("\n");
+				stringBuffer.append(" ");
                                 lines[linesNumber] = line;
                                 linesNumber++;
 			}
@@ -37,12 +41,12 @@ public class LoadMaze {
 			System.out.println("Contents of file:");
 			System.out.println(stringBuffer.toString());
                         System.out.printf("\n\n\n");
-                        for(int i=0 ; i< 8 ; i++){
+                        for(int i=0 ; i< 30 ; i++){
                             
-                            splitedLine = new String[21];
-                            String[] lineInt = lines[i].split("\t");
-                            for(int j=0;j<21;j++){
-                                maze1[i][j] = Integer.parseInt(lineInt[j]);
+                            splitedLine = new String[30];
+                            String[] lineInt = lines[i].split(" ");
+                            for(int j=0;j<30;j++){
+                                maze1[j][i] = Integer.parseInt(lineInt[j]);
                                 System.out.println(maze1[i][j] + " ");
                             }
                            
@@ -52,8 +56,8 @@ public class LoadMaze {
                             
                             
                         }
-                         for(int i=0 ; i<8 ; i++){
-                                for(int j=0 ; j<21 ; j++){
+                         for(int i=0 ; i<30 ; i++){
+                                for(int j=0 ; j<30 ; j++){
                                     System.out.print(maze1[i][j] + " ");
                                     
                                     

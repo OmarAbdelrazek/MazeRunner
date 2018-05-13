@@ -16,7 +16,9 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import view.*;
 import controller.*;
-import static controller.LoadMaze.maze1;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.*;
 
 /**
@@ -30,6 +32,7 @@ public class GameplayController implements Initializable {
     public static int Width;
     public static double CellHeight;
     public static double CellWidth;
+    Player1 p;
     GraphicsContext gc;
     int i, j;
 
@@ -47,10 +50,16 @@ public class GameplayController implements Initializable {
         CellHeight = gameplayPnl.getHeight() / 35;
         CellWidth = gameplayPnl.getWidth() / 30;
         gc = gameplayPnl.getGraphicsContext2D();
+        LoadMaze load = new LoadMaze();
+        try {
+            load.load();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GameplayController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         for (j = 0; j < 30; j++) {
             for (i = 0; i < 30; i++) {
                 
-                drawingengine.parse(3, i, j, gc);
+                drawingengine.parse(load.maze1[i][j], i, j, gc);
             }
 
         }
