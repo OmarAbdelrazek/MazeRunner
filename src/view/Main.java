@@ -32,7 +32,13 @@ public class Main extends Application {
     MediaPlayer mediaplayer;
     @Override
     public void start(Stage stage) throws Exception {
-      
+        Media musicFile = new Media("file:///D:/MazeRunner/src/Resources/Xd.mp3");
+        mediaplayer = new MediaPlayer(musicFile);
+        mediaplayer.play();
+        mediaplayer.setVolume(5);
+        if(mediaplayer.getStopTime()==mediaplayer.getCurrentTime())
+            mediaplayer.play();
+        
                 
         Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
         
