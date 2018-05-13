@@ -17,6 +17,10 @@ import java.util.Scanner;
 
 public class LoadMaze {
     public int[][] maze1 = new int[30][30];
+
+    public void setMaze1(int[][] maze1) {
+        this.maze1 = maze1;
+    }
     private static String [] lines = new String[30];
     private static String[] splitedLine; 
     private static int linesNumber = 0;
@@ -48,6 +52,7 @@ public class LoadMaze {
                             for(int j=0;j<30;j++){
                                 maze1[j][i] = Integer.parseInt(lineInt[j]);
                                 System.out.println(maze1[i][j] + " ");
+                               
                             }
                            
                             

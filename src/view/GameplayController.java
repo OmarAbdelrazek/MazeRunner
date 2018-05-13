@@ -34,10 +34,12 @@ public class GameplayController implements Initializable {
     public static int Width;
     public static double CellHeight;
     public static double CellWidth;
-    Player1 p;
+    Player1 p = Player1.getInstance();
     GraphicsContext gc;
-    int i, j;
-
+    int x = 0, y = 11, i, j;
+    int tempx, tempy;
+    LoadMaze load = new LoadMaze();
+    MyDrawingEngine drawingengine = new MyDrawingEngine();
     @FXML
     private Canvas gameplayPnl;
 
@@ -48,21 +50,22 @@ public class GameplayController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         gameplayPnl.setHeight(960);
         gameplayPnl.setWidth(1000);
-        MyDrawingEngine drawingengine = new MyDrawingEngine();
+
         CellHeight = gameplayPnl.getHeight() / 35;
         CellWidth = gameplayPnl.getWidth() / 30;
         gc = gameplayPnl.getGraphicsContext2D();
         gameplayPnl.setFocusTraversable(true);
 
-        LoadMaze load = new LoadMaze();
+        //load 
         try {
             load.load();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(GameplayController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        gc.fillRect(0, 0, 1000, 1000);
         for (j = 0; j < 30; j++) {
             for (i = 0; i < 30; i++) {
-                
+
                 drawingengine.parse(load.maze1[i][j], i, j, gc);
             }
 
@@ -71,13 +74,78 @@ public class GameplayController implements Initializable {
 
     @FXML
     private void gameplayKeyPressed(KeyEvent event) {
-        if(event.getCode() == KeyCode.UP){
-            System.out.println("up");}
-        if(event.getCode() == KeyCode.DOWN){
-            System.out.println("down");}
-        if(event.getCode() == KeyCode.RIGHT){
-            System.out.println("right");}
-        if(event.getCode() == KeyCode.LEFT){
-            System.out.println("left");}
+
+        if (event.getCode() == KeyCode.UP) {
+            if (load.maze1[x][y - 1] == 7) {
+
+            } else {
+                load.maze1[x][y] = 0;
+                load.maze1[x][y - 1] = 1;
+                y--;
+                gc.fillRect(0, 0, 1000, 1000);
+                for (j = 0; j < 30; j++) {
+                    for (i = 0; i < 30; i++) {
+
+                        drawingengine.parse(load.maze1[i][j], i, j, gc);
+                    }
+                }
+
+            } 
+        }
+        if (event.getCode() == KeyCode.DOWN) {
+            if (load.maze1[x][y + 1] == 7) {
+
+            } else {
+                load.maze1[x][y] = 0;
+                load.maze1[x][y + 1] = 1;
+                y++;
+
+                gc.fillRect(0, 0, 1000, 1000);
+                for (j = 0; j < 30; j++) {
+                    for (i = 0; i < 30; i++) {
+
+                        drawingengine.parse(load.maze1[i][j], i, j, gc);
+                    }
+                }
+            }
+        }
+        if (event.getCode() == KeyCode.RIGHT) {
+            if (load.maze1[x + 1][y] == 7) {
+
+            } else {
+                load.maze1[x][y] = 0;
+                load.maze1[x + 1][y] = 1;
+                x++;
+
+                gc.fillRect(0, 0, 1000, 1000);
+                for (j = 0; j < 30; j++) {
+                    for (i = 0; i < 30; i++) {
+
+                        drawingengine.parse(load.maze1[i][j], i, j, gc);
+                    }
+                }
+            }
+        }
+        if (event.getCode() == KeyCode.LEFT) {
+            if (load.maze1[x - 1][y] == 7) {
+
+            } else {
+                load.maze1[x][y] = 0;
+                load.maze1[x-1][y] = 1;
+                x--;
+
+                gc.fillRect(0, 0, 1000, 1000);
+                for (j = 0; j < 30; j++) {
+                    for (i = 0; i < 30; i++) {
+
+                        drawingengine.parse(load.maze1[i][j], i, j, gc);
+                    }
+                }
+            }
+        }
+        if (event.getCode() == KeyCode.SPACE) {
+            System.out.println("space");
+        }
+
     }
 }

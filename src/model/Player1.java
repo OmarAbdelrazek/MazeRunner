@@ -86,12 +86,12 @@ public class Player1 {
 
         return player;
     }
-    public void draw(GraphicsContext gc) {
+    public void draw(GraphicsContext gc, int i ,int j) {
         javafx.scene.image.Image img = new javafx.scene.image.Image("Resources/player.gif");        
         double x = GameplayController.CellHeight;
         double y = GameplayController.CellWidth;
-        double XonGrid = x * (this.getI());
-        double YonGrid = y * (this.getJ());
+        double XonGrid = x * (i);
+        double YonGrid = y * (j);
         gc.drawImage(img, XonGrid, YonGrid, GameplayController.CellWidth,GameplayController.CellHeight+6);
     }
     

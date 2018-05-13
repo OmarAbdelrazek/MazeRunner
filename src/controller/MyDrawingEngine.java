@@ -33,12 +33,10 @@ public int[][] Grid = new int[VerticalCells][HorizontalCells];
 {
     Player1 P;
     Player1 p = Player1.getInstance();
+    
     if(object==1)
     {
-     Thanos3 t = new Thanos3();
-     p.setI(i);
-     p.setJ(j);
-     p.draw(gc);
+     p.draw(gc,i,j);
     }
     else if(object==3)
     {
