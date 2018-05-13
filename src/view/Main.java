@@ -9,6 +9,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 /**  Parent choosePlayerParent;
@@ -27,9 +29,14 @@ import javafx.stage.Stage;
  * @author ooomooo
  */
 public class Main extends Application {
-    
+    MediaPlayer mediaplayer;
     @Override
     public void start(Stage stage) throws Exception {
+        Media musicFile = new Media("file:///D:/MazeRunner/src/Resources/Xd.mp3");
+        mediaplayer = new MediaPlayer(musicFile);
+        mediaplayer.setAutoPlay(true);
+        mediaplayer.setVolume(5);
+                
         Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
         
         Scene scene = new Scene(root);
@@ -41,6 +48,7 @@ public class Main extends Application {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
         launch(args);
     }
