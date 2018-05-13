@@ -19,7 +19,7 @@ public class WallFactory {
         if (type == 7) {
             return new StoneWall7();
         } else if (type == 8) {
-            return new TreeWall8();
+            return new Crate8();
         }
         return null;
     }

@@ -5,10 +5,12 @@
  */
 package model;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.scene.canvas.GraphicsContext;
 import view.GameplayController;
 
-public class Player1 {
+public class Player1 implements Observable{
 
     private int i;
     private int j;
@@ -47,6 +49,8 @@ public class Player1 {
 
     public void setHealth(int health) {
         this.health = health;
+      //  setChanged();
+      //  notifyObservers(new int (health));
     }
 
     public int getLives() {
@@ -55,6 +59,8 @@ public class Player1 {
 
     public void setLives(int lives) {
         this.lives = lives;
+        
+        
     }
 
     public int getBullets() {
@@ -110,5 +116,16 @@ public class Player1 {
     public void move() {
 
     }
+
+    @Override
+    public void addListener(InvalidationListener listener) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void removeListener(InvalidationListener listener) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
 }

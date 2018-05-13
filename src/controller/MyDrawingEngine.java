@@ -73,6 +73,13 @@ public int[][] Grid = new int[VerticalCells][HorizontalCells];
      t.setJ(j);
      t.draw(gc);
     }
+    else if (object==8)
+    {
+     Crate8 t = new Crate8();
+     t.setI(i);
+     t.setJ(j);
+     t.draw(gc);
+    }
 }
 
     @Override

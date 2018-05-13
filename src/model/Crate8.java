@@ -14,14 +14,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import view.*;
 
-public class TreeWall8 extends Cell implements Wall {
+public class Crate8 extends Cell implements Wall {
 
-    public TreeWall8() {
+    public Crate8() {
     }
 
     @Override
     public void draw(GraphicsContext gc) {
-        javafx.scene.image.Image img = new javafx.scene.image.Image("Resources/treewall.jpg");        
+        javafx.scene.image.Image img = new javafx.scene.image.Image("Resources/crate.png");        
         double x = GameplayController.CellHeight;
         double y = GameplayController.CellWidth;
         double XonGrid = x * (this.getI());
