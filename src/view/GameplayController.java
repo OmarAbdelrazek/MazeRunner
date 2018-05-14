@@ -16,6 +16,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import view.*;
 import controller.*;
+import java.awt.Event;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,7 +50,7 @@ public class GameplayController implements Initializable {
     public static ArrayList<int[][]> list = new ArrayList<>();
     Player1 p = Player1.getInstance();
     GraphicsContext gc;
-    public static int x = 0, y = 11, i, j;
+    public static int x, y , i, j;
     int tempx, tempy;
     public  static int bullets = 6;
     String lastMove = null;
@@ -170,6 +171,7 @@ public class GameplayController implements Initializable {
             hitLbl.setVisible(false);
         }
         if (event.getCode() == KeyCode.DOWN) {
+            System.out.println("down");
             if (load.maze1[x][y + 1] == 7 || load.maze1[x][y + 1] == 8) {
 
             } else {
@@ -480,6 +482,7 @@ if(health == 100){
                     healthLbl.setText(String.valueOf(health));
                     ScoreLbl.setText(String.valueOf(score));
                     bulletsLbl.setText(String.valueOf(bullets));
+                    
         
     }
 }
